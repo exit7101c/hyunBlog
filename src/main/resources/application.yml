@@ -1,0 +1,20 @@
+## mssql 
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost;databaseName=hyunblog;encrypt=true;trustServerCertificate=true
+    username: ph
+    password: 1024612a!
+  jpa:
+    hibernate:
+     ddl-auto: create #create update none
+     naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true 
+      
+server:
+  port: 8080
+
+
+
+ 
