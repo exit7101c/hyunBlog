@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyun.apiblog.mapper.UserMapper">
+
+    <select id="getUserById" resultType="com.hyun.apiblog.dto.UserDTO">
+        SELECT * FROM HB_USER WHERE USER_ID = #{userId}
+    </select>
+
+    <select id="getAllUsers" resultType="com.hyun.apiblog.dto.UserDTO">
+        SELECT * FROM HB_USER
+    </select>
+
+    <insert id="insertUser">
+        INSERT INTO HB_USER (USER_ID, USERNAME, EMAIL)
+        VALUES (#{userId}, #{username}, #{email})
+    </insert>
+
+    <update id="updateUser">
+        UPDATE HB_USER
+        SET USERNAME = #{username}, EMAIL = #{email}, EXPERIENCE = #{experience}, LEVEL = #{level}
+        WHERE USER_ID = #{userId}
+    </update>
+
+    <delete id="deleteUser">
+        DELETE FROM HB_USER WHERE USER_ID = #{userId}
+    </delete>
+
+</mapper>

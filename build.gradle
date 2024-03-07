@@ -1,12 +1,13 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '2.7.8'
+	id 'org.springframework.boot' version '2.5.5'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
-group = 'com.park'
+group = 'com.hyun'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 configurations {
 	compileOnly {
@@ -16,34 +17,31 @@ configurations {
 
 repositories {
 	mavenCentral()
+	maven { url 'https://repo1.maven.org/maven2/' }
 }
 
 dependencies {
 	// web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	
-	// jpa
-	// implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	
-	// mssql 
-	// implementation 'com.microsoft.sqlserver:mssql-jdbc'
 
 	// MySQL connector for java
-	implementation 'mysql:mysql-connector-java'
-
+	implementation 'mysql:mysql-connector-java:8.0.23'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	// Mybatis
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
 	// lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	
+
 	// security
 	// implementation 'org.springframework.boot:spring-boot-starter-security'
 	// implementation 'org.springframework.security:spring-security-test'
-	
+
 	// devtools
 	implementation 'org.springframework.boot:spring-boot-devtools'
-	
+
 	implementation 'javax.servlet:jstl'
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 	implementation 'org.springframework.security:spring-security-taglibs'
