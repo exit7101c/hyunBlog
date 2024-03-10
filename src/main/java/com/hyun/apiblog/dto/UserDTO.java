@@ -1,8 +1,12 @@
 package com.hyun.apiblog.dto;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Getter
+@Setter
 public class UserDTO {
     private final String username;
     private final String email;

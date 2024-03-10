@@ -2,9 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hyun.apiblog.mapper.CategoryMapper">
 
-    <select id="getAllUsers" resultType="com.hyun.apiblog.dto.CategoryDTO">
-        SELECT
-            CATEGORY_ID, CATEGORY_CODE, CATEGORY_NAME
+    <select id="getCategoryType" resultType="com.hyun.apiblog.dto.CategoryDTO">
+        SELECT CATEGORY_ID, CATEGORY_CODE, CATEGORY_NAME, CATEGORY_TYPE, URL
         FROM HB_CATEGORY
         WHERE CATEGORY_TYPE = #{type}
     </select>
