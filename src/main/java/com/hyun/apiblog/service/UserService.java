@@ -35,4 +35,8 @@ public class UserService {
     public void deleteUser(String userId) {
         userMapper.deleteUser(userId);
     }
+
+    public UserDTO getUserLogin(String userId, String password) {
+        return userMapper.getUserLogin(userId, password);
+    }
 }

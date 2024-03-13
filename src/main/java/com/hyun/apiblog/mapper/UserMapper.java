@@ -12,4 +12,6 @@ public interface UserMapper {
     void insertUser(UserDTO userDTO);
     void updateUser(UserDTO userDTO);
     void deleteUser(String userId);
+
+    UserDTO getUserLogin(String userId, String password);
 }

@@ -25,4 +25,8 @@
         DELETE FROM HB_USER WHERE USER_ID = #{userId}
     </delete>
 
+    <select id="getUserLogin" resultType="com.hyun.apiblog.dto.UserDTO">
+        SELECT * FROM HB_USER WHERE USER_ID = #{userId} AND PASSWORD = #{password}
+    </select>
+
 </mapper>
