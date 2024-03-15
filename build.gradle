@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '2.5.5'
+	id 'org.springframework.boot' version '2.7.7'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
@@ -25,7 +25,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
 	// MySQL connector for java
-	implementation 'mysql:mysql-connector-java:8.0.28'
+	implementation 'mysql:mysql-connector-java:8.0.23'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	// Mybatis
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
@@ -36,13 +36,14 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	// security
-	// implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	// implementation 'org.springframework.security:spring-security-test'
 
-	// JWT token
-//	implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
-//	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
-//	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+	// JWT
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
+	runtimeOnly('io.jsonwebtoken:jjwt-orgjson:0.11.2') { exclude group: 'org.json', module: 'json' }
 
 	// devtools
 	implementation 'org.springframework.boot:spring-boot-devtools'

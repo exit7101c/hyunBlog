@@ -8,15 +8,15 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserDTO {
-    private final String username;
+    private final String userName;
     private final String email;
     private final String password;
     private final int experience;
     private final String userId;
     private final int level;
 
-    public UserDTO(String userId, String username, String email, String password, int experience, int level) {
-        this.username = username;
+    public UserDTO(String userId, String userName, String email, String password, int experience, int level) {
+        this.userName = userName;
         this.email = email;
         this.password = password;
         this.experience = experience;
