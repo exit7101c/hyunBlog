@@ -12,6 +12,8 @@
 #     naming:
 #        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 #    show-sql: true
+jwt:
+  secret: VlwEyVBsYtaiwnQDKw9211V7zq57TejMnVUyzblYcfPQye08f7PHYUNM89XkHa
 
 spring:
   datasource:
