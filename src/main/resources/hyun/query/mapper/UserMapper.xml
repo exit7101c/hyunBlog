@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hyun.apiblog.mapper.UserMapper">
 
-    <select id="getUserById" resultType="com.hyun.apiblog.dto.UserDTO">
+    <select id="getUserById" resultType="com.hyun.apiblog.dto.UserDto">
         SELECT * FROM HB_USER WHERE USER_ID = #{userId}
     </select>
 
-    <select id="getAllUsers" resultType="com.hyun.apiblog.dto.UserDTO">
+    <select id="getAllUsers" resultType="com.hyun.apiblog.dto.UserDto">
         SELECT * FROM HB_USER
     </select>
 
@@ -25,7 +25,7 @@
         DELETE FROM HB_USER WHERE USER_ID = #{userId}
     </delete>
 
-    <select id="getUserLogin" resultType="com.hyun.apiblog.dto.UserDTO">
+    <select id="getUserLogin" resultType="com.hyun.apiblog.dto.UserDto">
         SELECT * FROM HB_USER WHERE USER_ID = #{userId} AND PASSWORD = #{password}
     </select>
 

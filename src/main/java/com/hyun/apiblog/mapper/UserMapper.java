@@ -1,17 +1,17 @@
 package com.hyun.apiblog.mapper;
 
-import com.hyun.apiblog.dto.UserDTO;
+import com.hyun.apiblog.dto.UserDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 @Mapper
 public interface UserMapper {
-    UserDTO getUserById(String userId);
-    List<UserDTO> getAllUsers();
-    void insertUser(UserDTO userDTO);
-    void updateUser(UserDTO userDTO);
+    UserDto getUserById(String userId);
+    List<UserDto> getAllUsers();
+    void insertUser(UserDto userDTO);
+    void updateUser(UserDto userDTO);
     void deleteUser(String userId);
 
-    UserDTO getUserLogin(String userId, String password);
+    UserDto getUserLogin(String userId, String password);
 }

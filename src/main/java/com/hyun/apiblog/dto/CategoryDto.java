@@ -7,14 +7,14 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class CategoryDTO {
+public class CategoryDto {
     private final int categoryId;
     private final String categoryCode;
     private final String categoryName;
     private final String categoryType;
     private final String url;
 
-    public CategoryDTO(int categoryId, String categoryCode, String categoryName, String categoryType, String url) {
+    public CategoryDto(int categoryId, String categoryCode, String categoryName, String categoryType, String url) {
         this.categoryId = categoryId;
         this.categoryCode = categoryCode;
         this.categoryName = categoryName;

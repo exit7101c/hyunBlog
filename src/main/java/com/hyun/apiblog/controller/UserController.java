@@ -1,11 +1,13 @@
 package com.hyun.apiblog.controller;
 
 import com.hyun.apiblog.dto.LoginRequest;
-import com.hyun.apiblog.dto.UserDTO;
+import com.hyun.apiblog.dto.UserDto;
 import com.hyun.apiblog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
@@ -19,47 +21,40 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
-    public UserDTO getUserById(@PathVariable String userId) {
+    public UserDto getUserById(@PathVariable String userId) {
         return userService.getUserById(userId);
     }
 
     @PostMapping("/login")
-    public UserDTO getUserLogin(@RequestBody LoginRequest loginRequest) {
+    public HttpSession getUserLogin(@RequestBody LoginRequest loginRequest, HttpServletRequest request) {
         String userId = loginRequest.getUserId();
         String password = loginRequest.getPassword();
 
-//        UserDTO loggedInUser = userService.getUserLogin(userId, password);
-//        if (loggedInUser != null) {
-//            // 로그인 성공 시 JWT 토큰 생성
-//            String token = generateJWTToken(userId); // 토큰 생성 메서드 호출
-//
-//            // 토큰과 사용자 정보를 함께 반환
-//            Map<String, Object> response = new HashMap<>();
-//            response.put("token", token);
-//            response.put("user", loggedInUser);
-//
-//            return ResponseEntity.ok(response);
-//        } else {
-//            // 로그인 실패 시 적절한 응답을 반환합니다. (예: 401 Unauthorized)
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-//        }
-
-
-        return userService.getUserLogin(userId, password);
+        UserDto user = userService.getUserLogin(userId, password);
+        System.out.println(user);
+        if (user != null) {
+            HttpSession session = request.getSession(); // 로그인이 성공한 경우에만 세션 생성
+            session.setAttribute("user", user);
+            session.setMaxInactiveInterval(60 * 30);
+            System.out.println(session);
+            return session;
+        } else {
+            return null;
+        }
     }
 
     @GetMapping
-    public List<UserDTO> getAllUsers() {
+    public List<UserDto> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @PostMapping
-    public void insertUser(@RequestBody UserDTO userDTO) {
+    public void insertUser(@RequestBody UserDto userDTO) {
         userService.insertUser(userDTO);
     }
 
     @PutMapping
-    public void updateUser(@RequestBody UserDTO userDTO) {
+    public void updateUser(@RequestBody UserDto userDTO) {
         userService.updateUser(userDTO);
     }
 

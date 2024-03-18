@@ -1,6 +1,6 @@
 package com.hyun.apiblog.service;
 
-import com.hyun.apiblog.dto.CategoryDTO;
+import com.hyun.apiblog.dto.CategoryDto;
 import com.hyun.apiblog.mapper.CategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class CategoryService {
         this.categoryMapper = categoryMapper;
     }
 
-    public List<CategoryDTO> getCategoryType(String type) {
+    public List<CategoryDto> getCategoryType(String type) {
         return categoryMapper.getCategoryType(type);
     }
 }

@@ -35,15 +35,18 @@ dependencies {
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	// session
+	implementation 'org.springframework.session:spring-session-core'
+
 	// security
-	implementation 'org.springframework.boot:spring-boot-starter-security'
+//	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	// implementation 'org.springframework.security:spring-security-test'
+// 	implementation 'org.springframework.security:spring-security-test'
 
 	// JWT
-	implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
-	implementation 'io.jsonwebtoken:jjwt-impl:0.12.3'
-	implementation 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+//	implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+//	implementation 'io.jsonwebtoken:jjwt-impl:0.12.3'
+//	implementation 'io.jsonwebtoken:jjwt-jackson:0.12.3'
 
 	// devtools
 	implementation 'org.springframework.boot:spring-boot-devtools'
