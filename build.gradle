@@ -38,6 +38,9 @@ dependencies {
 	// session
 	implementation 'org.springframework.session:spring-session-core'
 
+	// Provider
+	implementation 'javax.inject:javax.inject:1'
+
 	// security
 //	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
