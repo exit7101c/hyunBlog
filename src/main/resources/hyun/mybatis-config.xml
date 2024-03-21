@@ -25,7 +25,7 @@
     </typeAliases>
     <plugins>
         <!-- 확인필요.      -->
-        <plugin interceptor="com.nse.config.MybatisLogInterceptor" />
+        <plugin interceptor="com.hyun.config.MybatisLogInterceptor" />
     </plugins>
     <mappers>
         <!-- 확인필요       -->
