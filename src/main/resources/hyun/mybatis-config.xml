@@ -24,11 +24,11 @@
         <typeAlias type="java.util.HashMap" alias="HashMap"/>
     </typeAliases>
     <plugins>
-        <!-- 확인필요 . -->
+        <!-- 확인필요... -->
         <plugin interceptor="com.hyun.config.MybatisLogInterceptor" />
     </plugins>
     <mappers>
-        <!-- 확인필요   -->
+        <!-- 확인필요.... -->
         <mapper resource="select/spring/exquery/mappers/exquery_oracle.xml"/>
     </mappers>
 </configuration>
