@@ -36,7 +36,6 @@ public class MybatisLogInterceptor implements Interceptor {
         // 쿼리문을 가져온다(이 상태에서의 쿼리는 값이 들어갈 부분에 ?가 있다)
         String sql = boundSql.getSql();
 
-
         // 쿼리실행시 맵핑되는 파라미터를 구한다
         Object param = handler.getParameterHandler().getParameterObject();
 

@@ -27,27 +27,21 @@ server:
 
 # Mybatis 설정
 mybatis:
-  # default Package location - resultType의 Alias를 지정합니다.
-#  type-aliases-package: hyun.query.mapper
-#  # mapper location - 바라 볼 xml 파일을 지정합니다.
-#  mapper-locations: classpath:hyun/query/mapper/*.xml
-#  # column name to camel case - 반환 받는 컬럼명을 CamelCase로 받는 설정을 합니다.
-#  configuration:
-#    map-underscore-to-camel-case: true
+
 datasource:
-  # Log4jdbcProxyDataSource를 사용하여 데이터 소스를 설정합니다.
-  # dataSourceSpied는 Log4jdbcProxyDataSource의 생성자에 전달됩니다.
+  # Log4jdbcProxyDataSource를 사용하여 데이터 소스를 설정
+  # dataSourceSpied는 Log4jdbcProxyDataSource의 생성자에 전달
   dataSource:
     type: "net.sf.log4jdbc.Log4jdbcProxyDataSource"
     constructor-args:
       - ref: "dataSourceSpied"
     properties:
       logFormatter:
-        # Log4JdbcCustomFormatter를 사용하여 로그 형식을 지정합니다.
+        # Log4JdbcCustomFormatter를 사용하여 로그 형식을 지정
         type: "net.sf.log4jdbc.tools.Log4JdbcCustomFormatter"
         properties:
-          loggingType: "MULTI_LINE"  # 로그 유형을 다중 라인으로 지정합니다.
-          sqlPrefix: "SQL:::"  # SQL 문 앞에 붙일 접두사를 지정합니다.
+          loggingType: "MULTI_LINE"  # 로그 유형을 다중 라인으로 지정
+          sqlPrefix: "SQL:::"  # SQL 문 앞에 붙일 접두사를 지정
 
   beans:
     sqlSessionFactory:
