@@ -21,7 +21,6 @@ public class TestConrtoller {
 	@RequestMapping(value = "/testtest", method = { RequestMethod.GET, RequestMethod.POST })
 	@ResponseBody
 	public HashMap<String, Object> testCheck(@RequestParam HashMap<String, Object> param) throws Exception {
-		System.out.println(param);
 		return exqueryService.selectOne("hyun.apiblog.testtest.testCheck", param);
 	}
 
