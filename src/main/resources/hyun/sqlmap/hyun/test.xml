@@ -4,7 +4,7 @@
 <mapper namespace="hyun.apiblog.test">
 
     <select id="testCheck" parameterType="HashMap" resultType="ExqueryMap">
-        SELECT * FROM HB_USER WHERE USER_ID = #{userId}
+        SELECT * FROM users WHERE name = #{userId}
     </select>
 
 
