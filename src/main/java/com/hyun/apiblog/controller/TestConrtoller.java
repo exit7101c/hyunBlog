@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import select.exquery.service.ExqueryService;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
-import java.util.List;
 
 @RestController
 public class TestConrtoller {
+
+	@Autowired
 	private ExqueryService exqueryService;
 
 	@GetMapping("/test")
