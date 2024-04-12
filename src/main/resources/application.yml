@@ -48,7 +48,7 @@ datasource:
       class: com.hyun.config.refreshMybatis
       properties:
         mapperLocations: classpath:hyun/sqlmap/**/*.xml
-        configLocation: classpath:hyun/mybatis-config.xml
+        configLocation: classpath:mybatis-config.xml
         dataSource: '@dataSource'
 
 
