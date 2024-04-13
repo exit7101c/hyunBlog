@@ -11,10 +11,13 @@ import java.util.HashMap;
 @RestController
 public class TestConrtoller {
 
-	@Autowired
-	private ExqueryService exqueryService;
+	private final ExqueryService exqueryService;
 
-    @GetMapping("/test")
+	public TestConrtoller(ExqueryService exqueryService) {
+		this.exqueryService = exqueryService;
+	}
+
+	@GetMapping("/test")
 	public String hello() {
 		return "Hello World";
 	}
@@ -23,7 +26,7 @@ public class TestConrtoller {
 	@ResponseBody
 	public HashMap<String, Object> testCheck(@RequestParam HashMap<String, Object> param) throws Exception {
 		System.out.println(param);
-		return exqueryService.selectOne("hyun.sqlmap.test.testCheck", param);
+		return exqueryService.selectOne("sqlmap.test.testCheck", param);
 	}
 
 }
