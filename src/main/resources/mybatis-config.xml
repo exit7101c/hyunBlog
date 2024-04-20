@@ -27,7 +27,7 @@
         <plugin interceptor="com.hyun.config.MybatisLogInterceptor" />
     </plugins>
     <mappers>
-<!--        <mapper resource="hyun/select/exquery/mappers/exquery_mysql.xml"/>-->
-        <mapper resource="hyun/sqlmap/test/test.xml"/>
+        <mapper resource="hyun/select/exquery/mappers/exquery_mysql.xml"/>
+<!--        <mapper resource="hyun/sqlmap/**/**.xml"/>-->
     </mappers>
 </configuration>
