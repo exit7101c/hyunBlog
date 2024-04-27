@@ -29,19 +29,19 @@ server:
 mybatis:
 
 datasource:
-  # Log4jdbcProxyDataSource를 사용하여 데이터 소스를 설정.
-  # dataSourceSpied는 Log4jdbcProxyDataSource의 생성자에 전달.
+  # Log4jdbcProxyDataSource를 사용하여 데이터 소스를 설정
+  # dataSourceSpied는 Log4jdbcProxyDataSource의 생성자에 전달
   dataSource:
     type: "net.sf.log4jdbc.Log4jdbcProxyDataSource"
     constructor-args:
       - ref: "dataSourceSpied"
     properties:
       logFormatter:
-        # Log4JdbcCustomFormatter를 사용하여 로그 형식을 지정.
+        # Log4JdbcCustomFormatter를 사용하여 로그 형식을 지정
         type: "net.sf.log4jdbc.tools.Log4JdbcCustomFormatter"
         properties:
-          loggingType: "MULTI_LINE"  # 로그 유형을 다중 라인으로 지정..
-          sqlPrefix: "SQL:::"  # SQL 문 앞에 붙일 접두사를 지정..
+          loggingType: "MULTI_LINE"  # 로그 유형을 다중 라인으로 지정
+          sqlPrefix: "SQL:::"  # SQL 문 앞에 붙일 접두사를 지정
 
   beans:
     sqlSessionFactory:
