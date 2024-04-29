@@ -41,7 +41,7 @@ datasource:
         type: "net.sf.log4jdbc.tools.Log4JdbcCustomFormatter"
         properties:
           loggingType: "MULTI_LINE"  # 로그 유형을 다중 라인으로 지정.
-          sqlPrefix: "SQL:::"  # SQL 문 앞에 붙일 접두사를 지정.
+          sqlPrefix: "SQL:::"  # SQL 문 앞에 붙일 접두사를 지정
 
   beans:
     sqlSessionFactory:
