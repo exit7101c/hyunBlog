@@ -29,8 +29,8 @@ server:
 mybatis:
 
 datasource:
-  # Log4jdbcProxyDataSource를 사용하여 데이터 소스를 설정.
-  # dataSourceSpied는 Log4jdbcProxyDataSource의 생성자에 전달.
+  # Log4jdbcProxyDataSource를 사용하여 데이터 소스를 설정
+  # dataSourceSpied는 Log4jdbcProxyDataSource의 생성자에 전달
   dataSource:
     type: "net.sf.log4jdbc.Log4jdbcProxyDataSource"
     constructor-args:
